@@ -4,7 +4,7 @@
  * A simple demo project to control a servo motor with Arduino via Serial Monitor.
  * Enter an angle from 0–180, and the servo will rotate accordingly.
  *
- * Author: Tran Dang Khoa (CodeWithKhoa)
+ * Author: Tran Dang Khoa (TranDangKhoaTechnology)
  * Year: 2025
  *
  * License: MIT License
