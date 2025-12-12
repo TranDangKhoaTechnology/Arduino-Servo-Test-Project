@@ -38,7 +38,11 @@ Just type an angle from **0–180**, and the servo will rotate to that position.
 ## 💻 Arduino Code
 
 ```cpp
-#include <Servo.h>
+#if defined(ESP32)
+  #include <ESP32Servo.h>
+#else
+  #include <Servo.h>
+#endif
 
 Servo myServo;
 int servoPin = 9;  // Servo pin (D9 on Arduino UNO)
