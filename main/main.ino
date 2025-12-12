@@ -1,4 +1,4 @@
-/*
+ /*
  * Arduino Servo Angle Controller (Serial Input)
  * ---------------------------------------------
  * A simple demo project to control a servo motor with Arduino via Serial Monitor.
@@ -18,16 +18,22 @@
  * The above copyright notice and this permission notice shall be included in
  * all copies or substantial portions of the Software.
  */
-
-#include <Servo.h>
+ 
+#if defined(ESP32)
+  #include <ESP32Servo.h>
+#else
+  #include <Servo.h>
+#endif
 
 Servo myServo;
 int servoPin = 9;  // Servo pin (D9 on Arduino UNO)
+int gocbandau = 0;
 
 void setup() {
-  Serial.begin(9600);
+  Serial.begin(115200);
   myServo.attach(servoPin);  // Attach servo to pin
   Serial.println("Nhap goc servo (0 - 180):");
+  myServo.write(gocbandau);
 }
 
 void loop() {
